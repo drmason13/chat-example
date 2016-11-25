@@ -6,15 +6,6 @@ var io = require('socket.io')(http);
 var connectionCount = 0;
 var nicknames_taken = [];
 
-function serveHTML(req, res){
-  res.sendFile(__dirname + '/index.html');
-}
-
-function serveAll(req, res){
-  res.sendFile(__dirname + '/index.html');
-  res.sendFile(__dirname + '/stylesheet.css');
-}
-
 app.use(express.static('public'));
 
 io.on('connection', function(socket){

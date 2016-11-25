@@ -4,9 +4,10 @@ var http = require('http').Server(app);
 var io = require('socket.io')(http);
 
 var connectionCount = 0;
-var nicknames_taken = [];
 
-app.use(express.static('public'));
+app.set('port', (process.env.PORT || 5000));
+
+app.use(express.static(__dirname + '/public'));
 
 io.on('connection', function(socket){
   // manage connection count
@@ -27,7 +28,6 @@ io.on('connection', function(socket){
   });
 });
 
-var port = process.env.PORT || 3000;
-http.listen(port, function(){
-  console.log('listening on port '+port);
+app.listen(app.get('port'), function() {
+  console.log('Node app is running on port', app.get('port'));
 });

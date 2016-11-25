@@ -1,0 +1,48 @@
+/* stylesheet for chat-example */
+body,
+html,
+.fullscreen {
+  height: 100%;
+}
+
+body {
+  font: Helvetica, sans-serif;
+  font-size: 20px;
+  margin: 0;
+}
+
+.fullscreen {
+  display: flex;
+  flex-direction: column;
+}
+
+form {
+  display: flex;
+  height: 3em;
+}
+
+form button {
+  width: 13%;
+  padding: 1em;
+  border: none;
+  background: rgb(130, 224, 255);
+}
+
+#m {
+  font-size: 20px;
+  width: 85%;
+  background: #fff;
+  color: black;
+}
+
+#messages {
+  list-style-type: none; margin: 0; padding: 0;
+}
+
+#messages li {
+  padding: 5px 10px;
+}
+
+#messages li:nth-child(odd) {
+  background: #eee;
+}
